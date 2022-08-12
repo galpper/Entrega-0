@@ -17,11 +17,42 @@
 </head>
 
 <body>
-  <main class="mt-5">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Iniciar sesión</a>
+          </li>
+        </ul>
       </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="form">
+      <img src="/img/login.png" id="imglogin" alt="JaP"><br>
+      <div class="login">
+        <h2 class="ini">Iniciar Sesión</h2>
+        <input type="text" name="usuario" class="user" id="user" placeholder="Usuario"><br>
+        <input type="password" name="password" id="pass" class="pass" placeholder="Contraseña"><br>
+        <a href="index.html"><button class="ingresar" id="ingresar">Ingresar</button></a>
+      </div>
+      
+    </div>
     </div>
   </main>
   <footer class="text-muted">
