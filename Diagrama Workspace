@@ -1,22 +1,24 @@
-<mxfile host="app.diagrams.net" modified="2022-08-12T13:33:56.672Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="yvuh-DD8qzg5MZd7PYwi" version="20.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-12T13:37:18.206Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="uJ8mrjH85lL1LRpw9HZA" version="20.2.3" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="tqNIRdYydL_I3s9ajCn--0" value="Producto " style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="60" y="50" width="160" height="160" as="geometry">
+        <mxCell id="tqNIRdYydL_I3s9ajCn--0" value="Producto" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="60" y="320" width="160" height="160" as="geometry">
             <mxRectangle x="60" y="20" width="100" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tqNIRdYydL_I3s9ajCn--1" value="+ ID&#xa;+Nombre&#xa;+Costo&#xa;+Descripción&#xa;+Divisa&#xa;+Costo&#xa;+Vendedor&#xa;+Imagen" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="tqNIRdYydL_I3s9ajCn--0">
           <mxGeometry y="30" width="160" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="tqNIRdYydL_I3s9ajCn--2" value="Entity" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="330" y="170" width="160" height="120" as="geometry" />
+        <mxCell id="tqNIRdYydL_I3s9ajCn--2" value="Categorias" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="60" y="120" width="160" height="170" as="geometry">
+            <mxRectangle x="330" y="170" width="110" height="30" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="tqNIRdYydL_I3s9ajCn--3" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="tqNIRdYydL_I3s9ajCn--2">
-          <mxGeometry y="30" width="160" height="90" as="geometry" />
+        <mxCell id="tqNIRdYydL_I3s9ajCn--3" value="+Autos&#xa;+Juguetes&#xa;+Muebles&#xa;+Herramientas&#xa;+Computadoras&#xa;+Vestimenta&#xa;+Electrodomésticos&#xa;+Deportes&#xa;+Celulares" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="tqNIRdYydL_I3s9ajCn--2">
+          <mxGeometry y="30" width="160" height="140" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
