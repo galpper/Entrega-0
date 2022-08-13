@@ -49,9 +49,8 @@
         <h2 class="ini">Iniciar Sesión</h2>
         <input type="text" name="usuario" class="user" id="user" placeholder="Usuario"><br>
         <input type="password" name="password" id="pass" class="pass" placeholder="Contraseña"><br>
-        <a href="index.html"><button class="ingresar" id="ingresar">Ingresar</button></a>
+        <button class="ingresar" id="ingresar">Ingresar</button>
       </div>
-      
     </div>
     </div>
   </main>
@@ -66,6 +65,14 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
+  <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
+    <p>Debe rellenar todos los campos</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="alert alert-success alert-dismissible fade" role="alert" id="alert-success">
+    <p>Datos guardados correctamente</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 </body>
 
 </html>
