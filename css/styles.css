@@ -192,7 +192,7 @@ a.custom-card:hover {
 .user, .pass {
   margin-top: 5px;
   width: 300px;
-  height: 60px;
+  height: 38px;
   border: 1px solid #ced4da;
 
 }
@@ -207,7 +207,7 @@ a.custom-card:hover {
 .login{
   background-color: white;
   width: 480px;
-  height: 205px;
+  height: 220px;
   text-align: center;
   margin: auto auto auto auto;
   font-size: 20px;
