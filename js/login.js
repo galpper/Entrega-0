@@ -27,9 +27,8 @@ function login(){
 
 document.addEventListener("DOMContentLoaded",()=>{
    document.getElementById("ingresar").addEventListener("click", ()=>{
-      let usuario = localStorage.getItem(user);
+      let usuario = sessionStorage.getItem(user);
     document.getElementById("user").innerHTML=usuario;
     login();
-    
 })})
 
