@@ -28,7 +28,9 @@ function showCategoriesList(array){
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    getJSONData(URL101).then((resultObj)=>{
+    console.log(URLDEF);
+        
+    getJSONData(URLDEF).then((resultObj)=>{
         if (resultObj.status === "ok")
         {
             categoriesArray = resultObj.data.products;
