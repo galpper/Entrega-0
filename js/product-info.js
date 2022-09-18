@@ -2,7 +2,7 @@ let arrayProduct = [];
 let arrayComment = [];
 
 function setCatID(id) {
-    localStorage.setItem("catID", id);
+    localStorage.setItem("productID", id);
     window.location = "product-info.html"
 }
 
@@ -10,8 +10,8 @@ function showProductDetail(arrayProduct){
     let htmlContentToAppend = "";
     
         htmlContentToAppend += `
-        <div class="single_product">
-        <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
+        <div>
+        <div class="container-fluid" style=" background-color: #fff; padding: 11px; height: 580px;">
             <div class="row">
                 <div class="col-lg-4 order-lg-2 order-1 tamaño">
                     <div class="image_selected"><div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -60,7 +60,7 @@ function showProductDetail(arrayProduct){
             <div class="row padding-2">
                 <div class="col-md-5 padding-0 recom">
                     <div class="bbb_combo">
-                        <div onclick="setCatID(${arrayProduct.relatedProducts[0].id})" class="bbb_combo_image"><img class="bbb_combo_image" src="${arrayProduct.relatedProducts[0].image}" alt=""></div>
+                        <div onclick="setCatID(${arrayProduct.relatedProducts[0].id})" class="bbb_combo_image" ><img class="bbb_combo_image" src="${arrayProduct.relatedProducts[0].image}" alt=""></div>
                         <div class="product_name bbb_combo_image"><h4>${arrayProduct.relatedProducts[0].name}</h4></div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ function showProductDetail(arrayProduct){
             </div>
             
         `
-        document.getElementById("contenedor").innerHTML = htmlContentToAppend;         
+        document.getElementById("contenido").innerHTML = htmlContentToAppend;         
     }
 
     function estrellas(array){
@@ -100,9 +100,10 @@ function showProductDetail(arrayProduct){
       for (let i = 0; i < array.length; i++) {
         const com = array[i];
         comment += `
-      <div class="col" style="height: 200px;
-      width: 400px;
-      align-content: center;">
+        <li>
+      <div class="col" style="height: 100px;
+      width: 100%;
+      margin-bottom: 10px;">
           <div class="card shadow-sm center" >
             <div class="card-body" >
             <h5 class="card-title">${com.user}${estrellas(com.score)}</h5>
@@ -113,34 +114,11 @@ function showProductDetail(arrayProduct){
             </div>
           </div>
         </div>
+        </li>
          `
       }
-      document.getElementById("coment").innerHTML = comment;
+      document.getElementById("comentarios").innerHTML = comment;
     }
-    /*<div>   <div class="col-sm-6 col-lg-4 mb-4 tamano">
-    ${com.user} ${com.dateTime}  ${estrellas(com.score)}<br>
-    ${com.description}
-     </div>*/
-
-
-      /*<div class="album py-5 bg-light">
-        <div class="container tamano">
-    
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
-          <div class="col">
-          <div class="card shadow-sm">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">${com.user}${estrellas(com.score)}</h5>
-            <p class="card-text">${com.description}</p>
-            <p class="card-text"><small class="text-muted">${com.dateTime}</small></p>
-          </div>
-        </div>
-        </div>
-        </div>
-      </div>
-      </div>
-*/  
     
     
     

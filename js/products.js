@@ -19,7 +19,7 @@ function sortProduct(criteria, array){
 }
 
 function setCatID(id) {
-    localStorage.setItem("catID", id);
+    localStorage.setItem("productID", id);
     window.location = "product-info.html"
 }
 
