@@ -44,6 +44,10 @@ let getJSONData = function(url){
         return result;
     });
 }
+//Cerrar sesion
+function logout(){
+    sessionStorage.removeItem("user")
+};
 
 document.addEventListener("DOMContentLoaded", ()=>{
   
@@ -89,9 +93,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
     <li class="nav-item">
       <a class="nav-link" href="sell.html">Vender</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="my-profile.html">${usuario}</a>
-    </li>
+    <div class="nav-item dropdown">
+    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <img src="/img/user.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+      <strong>${usuario}</strong>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+      <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+      <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li onclick="logout()"><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+    </ul>
+  </div>
+</div> 
     </ul>`
   }
   else {

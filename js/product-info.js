@@ -2,8 +2,8 @@ let arrayProduct = [];
 let arrayComment = [];
 
 function setCatID(id) {
-    localStorage.setItem("productID", id);
-    window.location = "product-info.html"
+  localStorage.setItem("productID", id);
+  window.location = "product-info.html"
 }
 
 function showProductDetail(arrayProduct){
