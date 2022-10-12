@@ -4,7 +4,7 @@ function showArt(arrayProduct){
     let contenido = "";
     
         contenido += `
-        <td>${arrayProduct.images[0]}</td>
+        <td><img src="${arrayProduct.images[0]}" class="imgcarro" alt="" ></td>
     <td>${arrayProduct.name}</td>
     <td>${arrayProduct.cost}</td>
     <td><label for=""><input type="text"></label></td>
