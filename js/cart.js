@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
 
     
-    document.getElementById("cant").addEventListener("onchange", ()=>{
+    document.getElementById("cant").addEventListener("change", ()=>{
         suma(arrayProduct);
     });
 });
