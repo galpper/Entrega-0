@@ -1,40 +1,43 @@
 let arrayProduct = [];
 
 
-function suma(arrayProduct){
+function suma(array) {
     let cant = document.getElementById("cant").value;
-     let resultado = arrayProduct.cost * cant;
+    let resultado = arrayProduct.currency + " " + (array.cost * cant);
     document.getElementById("result").innerHTML = resultado;
 }
 
 
 
-function showArt(arrayProduct){
+function showArt(arrayProduct) {
     let contenido = "";
-    
-        contenido += `
+
+    contenido += `
         <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="${arrayProduct.images[0]}" alt="product image" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex justify-content-start text-center">
-                        <h4> ${arrayProduct.name} - ${arrayProduct.currency} ${arrayProduct.cost} <input class="form-control" type="number" placeholder="Cant." id="cant"></h4> <p id="result"></p>
-                    </div>
+            <div class="row ms-2 me-2">
+            <img src="${arrayProduct.images[0]}" alt="product image" class="d-flex flex-row mt-1 img-thumbnail" style="width: 25%;">
+                <table class="text-center fs-5" style="width: 72%;">                
+                        <tr>                            
+                            <td><strong>Articulo</strong></td>
+                            <td><strong>Costo</strong></td>
+                            <td><strong>Cantidad</strong></td>
+                            <td><strong>Subtotal</strong></td>
+                        </tr>
+                        <tr>                            
+                            <td>${arrayProduct.name} </td>
+                            <td>${arrayProduct.currency} ${arrayProduct.cost}</td>
+                            <td><input id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 23%;"></td>
+                            <td id="result"></td>
+                        </tr>
+                </table>                
             </div>
         </div>
-                `
-        /*       
-         <td><img src="${arrayProduct.images[0]}" class="imgcarro" alt="" ></td>
-         <td>${arrayProduct.name}</td>
-         <td>${arrayProduct.cost}</td>
-         <td><input class="form-control" type="number" placeholder="Cant." id="cant"></td>
-         <td id="result"></td> 
-        */
+        `
+        /* 
         
+        */
 
-        document.getElementById("art").innerHTML = contenido;         
+    document.getElementById("art").innerHTML = contenido;
 }
 
 
@@ -44,21 +47,22 @@ function showArt(arrayProduct){
 
 
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-    getJSONData(PRODUCT_INFO_URL+50921+EXT_TYPE).then((resultObj)=>{
-        if (resultObj.status === "ok")
-        {
+    getJSONData(PRODUCT_INFO_URL + 50921 + EXT_TYPE).then((resultObj) => {
+        if (resultObj.status === "ok") {
             arrayProduct = resultObj.data;
             console.log(arrayProduct);
-            showArt(arrayProduct);  
+            showArt(arrayProduct);
             costo = arrayProduct.cost;
             cantidad = document.getElementById("cant").value;
+            suma(arrayProduct);
         }
     });
 
-    
-    document.getElementById("cant").addEventListener("change", ()=>{
+
+    document.getElementById("cant").addEventListener("change", () => {
         suma(arrayProduct);
     });
+
 });
