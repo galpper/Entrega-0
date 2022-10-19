@@ -26,7 +26,7 @@ function showArt(arrayProduct) {
                         <tr>                            
                             <td>${arrayProduct.name} </td>
                             <td>${arrayProduct.currency} ${arrayProduct.cost}</td>
-                            <td><input id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 23%;"></td>
+                            <td><input onchange="suma(arrayProduct);" id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 23%;"></td>
                             <td id="result"></td>
                         </tr>
                 </table>                
@@ -61,8 +61,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    document.getElementById("cant").addEventListener("change", () => {
-        suma(arrayProduct);
-    });
-
+    
 });
