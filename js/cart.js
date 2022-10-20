@@ -2,8 +2,9 @@ let arrayProduct = [];
 let en1 = 0.15;
 let en2 = 0.07;
 let en3 = 0.05;
-let total = [];
+let total = 0;
 
+// no funciona
 function suma(array) {
     let cant = document.getElementById("cant").value;
     let resultado = arrayProduct.currency + " " + (array.cost * cant);
@@ -13,8 +14,7 @@ function suma(array) {
 }
 
 function envio (envio){
-let total = 0;
-let subTotal = document.getElementById("result").value
+let subTotal = document.getElementById("result");
 total = (envio*subTotal)+subTotal;
 document.getElementById("total").innerHTML = total;
 };
