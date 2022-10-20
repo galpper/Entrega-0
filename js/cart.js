@@ -1,11 +1,23 @@
 let arrayProduct = [];
-
+let en1 = 0.15;
+let en2 = 0.07;
+let en3 = 0.05;
+let total = [];
 
 function suma(array) {
     let cant = document.getElementById("cant").value;
     let resultado = arrayProduct.currency + " " + (array.cost * cant);
+    let result = (array.cost * cant);
     document.getElementById("result").innerHTML = resultado;
+    total= result;
 }
+
+function envio (envio){
+let total = 0;
+let subTotal = document.getElementById("result").value
+total = (envio*subTotal)+subTotal;
+document.getElementById("total").innerHTML = total;
+};
 
 
 
@@ -26,7 +38,7 @@ function showArt(arrayProduct) {
                         <tr>                            
                             <td>${arrayProduct.name} </td>
                             <td>${arrayProduct.currency} ${arrayProduct.cost}</td>
-                            <td><input onchange="suma(arrayProduct);" id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 23%;"></td>
+                            <td><input onchange="suma(arrayProduct);" id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 30%;"></td>
                             <td id="result"></td>
                         </tr>
                 </table>                
@@ -60,6 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    document.getElementById("en1").addEventListener("change", ()=>{
+        envio(en1);
+    });
 
+    document.getElementById("en2").addEventListener("change", ()=>{
+        envio(en2);
+    });
+
+    document.getElementById("en3").addEventListener("change", ()=>{
+        envio(en3);
+    });
     
 });
