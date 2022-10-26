@@ -1,22 +1,25 @@
 let arrayProduct = [];
-let en1 = 0.15;
-let en2 = 0.07;
-let en3 = 0.05;
+let en1 = 15;
+let en2 = 7;
+let en3 = 5;
+let envioTotal = 0;
+let costoEnvio = 0;
 let total = 0;
 
-// no funciona
+
 function suma(array) {
     let cant = document.getElementById("cant").value;
     let resultado = arrayProduct.currency + " " + (array.cost * cant);
-    let result = (array.cost * cant);
+    costoEnvio = (array.cost * cant);
     document.getElementById("result").innerHTML = resultado;
-    total= result;
-}
+    document.getElementById("subTotal").innerHTML = resultado;
+    
+  }
 
-function envio (envio){
-let subTotal = document.getElementById("result");
-total = (envio*subTotal)+subTotal;
-document.getElementById("total").innerHTML = total;
+function envio (array, array2){
+envioTotal = "USD "+((array*array2) /100);
+document.getElementById("envio").innerHTML = envioTotal;
+document.getElementById("total").innerHTML = (resultado+array*array2);
 };
 
 
@@ -39,7 +42,7 @@ function showArt(arrayProduct) {
                             <td>${arrayProduct.name} </td>
                             <td>${arrayProduct.currency} ${arrayProduct.cost}</td>
                             <td><input onchange="suma(arrayProduct);" id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 30%;"></td>
-                            <td id="result"></td>
+                            <td><p id="result"></p></td>
                         </tr>
                 </table>                
             </div>
@@ -67,21 +70,25 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(arrayProduct);
             showArt(arrayProduct);
             costo = arrayProduct.cost;
-            cantidad = document.getElementById("cant").value;
             suma(arrayProduct);
+            console.log(subTotal)
+            envio(en1, costoEnvio);
         }
     });
 
+
     document.getElementById("en1").addEventListener("change", ()=>{
-        envio(en1);
+        envio(en1, costoEnvio);
     });
 
     document.getElementById("en2").addEventListener("change", ()=>{
-        envio(en2);
+        envio(en2, costoEnvio);
     });
 
     document.getElementById("en3").addEventListener("change", ()=>{
-        envio(en3);
+        envio(en3, costoEnvio);
     });
+
+        
     
 });

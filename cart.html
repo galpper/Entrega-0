@@ -29,32 +29,68 @@
   <main>
     <div class="text-center mt-2">
       <div>
-        <h1 >Carrito de compras</h1>
+        <h1>Carrito de compras</h1>
       </div>
       <div class="text-center">
         <h4 class="text-secondary">Articulos a comprar</h4>
-        </div>
+      </div>
     </div>
     <div id="art">
 
     </div>
     <div class="row ms-4 mt-2">
       <div class="col mb-2">
-      <h4>Tipo de envio</h4>
-      <label id="en1" for="envio1"></label><input type="radio" name="envio"> Premium de 2 a 5 días (15%)</label><br>
-      <label id="en2" for="envio2"><input type="radio" name="envio"> Express de 5 a 8 días (7%)</label><br>
-      <label id="en3" for="envio3"><input type="radio" name="envio"> Standard de 12 a 15 días (5%)</label><br>
+        <h4>Tipo de envio</h4>
+        <label id="en1" for="envio1"></label><input checked type="radio" name="envio"> Premium de 2 a 5 días (15%)</label><br>
+        <label id="en2" for="envio2"><input type="radio" name="envio"> Express de 5 a 8 días (7%)</label><br>
+        <label id="en3" for="envio3"><input type="radio" name="envio"> Standard de 12 a 15 días (5%)</label><br>
+      </div>
+      <hr>
+
+      <div class="col">
+        <h4>Dirección de envio</h4><br>
+        <label for="calle" class="fs-5"> Calle: <input class="form-control" type="text"></label> <label class="fs-5"
+          for="num"> Numero: <input class="form-control" type="text"></label><br><br>
+        <label class="fs-5" for="esquina"> Esquina: <input class="form-control" type="text"></label>
+      </div>
     </div>
-    <div class="col-3 me-5 border border-primary text-center mb-2" style="width: 150x;">
-      <h4>Monto total</h4><br>
-      <p id="total"></p>
-    </div><br><hr>
-    <div class="col">
-      <h4>Dirección de envio</h4><br>
-      <label for="calle" class="fs-5"> Calle: <input class="form-control" type="text"></label>  <label class="fs-5" for="num"> Numero: <input class="form-control" type="text"></label><br><br>
-      <label class="fs-5" for="esquina"> Esquina: <input class="form-control" type="text"></label> 
+    <hr>
+    <div>
+      <h4 class="ms-4">Costos</h4>
+      <div class="list-group-item list-group-item-action" style=" background-color: #fff; padding: 11px; height: 2%;">
+        <div class="row ms-1 mt-2">
+          <div class="col">
+            <h5>Sub total</h5> 
+            <p>Costo del carrito</p>
+          </div>
+          <div class="col-3 text-center mt-2">
+            <p id="subTotal"></p>
+          </div>
+        </div>
+      </div>
+      <div class="list-group-item list-group-item-action" style=" background-color: #fff; padding: 11px; height: 2%;">
+        <div class="row ms-1 mt-2">
+          <div class="col">
+            <h5>Costo de envío </h5> 
+            <p>Segun el tipo de envío</p>
+          </div>
+          <div class="col-3 text-center mt-2">
+            <p id="envio"></p>
+          </div>
+        </div>
+      </div>
+      <div class="list-group-item list-group-item-action" style=" background-color: #fff; padding: 11px; height: 2%;">
+        <div class="row ms-1 mt-2">
+          <div class="col">
+            <h5>Total ($) </h5>
+          </div>
+          <div class="col-3 text-center mt-2">
+            <p id="total"></p>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+
 
   </main>
   <footer class="text-muted">
