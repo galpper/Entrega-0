@@ -5,6 +5,9 @@ let productArray = [];
 let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
+let algo = document.getElementsByClassName("algo");
+
+
 
 function sortProduct(criteria, array){
     let result = [];
@@ -39,7 +42,7 @@ function showProductList(){
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
-                        <h4>${product.name} - ${product.currency} ${product.cost} </h4> 
+                        <h4 class="algo">${product.name} - ${product.currency} ${product.cost} </h4> 
                         <p> ${product.description}</p> 
                         </div>
                         <small class="text-muted"> ${product.soldCount} artículos</small> 

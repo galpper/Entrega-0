@@ -5,6 +5,8 @@ let en3 = 5;
 let envioTotal = 0;
 let costoEnvio = 0;
 let total = 0;
+let algo = document.getElementsByClassName("cant"); // algo.cant.value
+
 
 
 function suma(array) {
@@ -13,18 +15,24 @@ function suma(array) {
     costoEnvio = (array.cost * cant);
     document.getElementById("result").innerHTML = resultado;
     document.getElementById("subTotal").innerHTML = resultado;
-    
+    envio(sessionStorage.getItem("carrito"), costoEnvio);
+    sumaTotal();
   }
 
-function envio (array, array2){
-envioTotal = "USD "+((array*array2) /100);
-document.getElementById("envio").innerHTML = envioTotal;
-document.getElementById("total").innerHTML = (resultado+array*array2);
+
+function envio(array, array2){
+envioTotal = ((array*array2) /100);
+document.getElementById("envio").innerHTML = "USD "+envioTotal;
+sumaTotal();
 };
 
-
+function sumaTotal(){
+    total = costoEnvio+envioTotal;
+    document.getElementById("total").innerHTML = "USD "+ total
+}
 
 function showArt(arrayProduct) {
+
     let contenido = "";
 
     contenido += `
@@ -41,7 +49,7 @@ function showArt(arrayProduct) {
                         <tr>                            
                             <td>${arrayProduct.name} </td>
                             <td>${arrayProduct.currency} ${arrayProduct.cost}</td>
-                            <td><input onchange="suma(arrayProduct);" id="cant" class="form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 30%;"></td>
+                            <td><input onchange="suma(arrayProduct);" id="cant" class="cant form-control" type="number" placeholder="Cant." value="1" style="display: initial; width: 30%;"></td>
                             <td><p id="result"></p></td>
                         </tr>
                 </table>                
@@ -72,23 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
             costo = arrayProduct.cost;
             suma(arrayProduct);
             console.log(subTotal)
-            envio(en1, costoEnvio);
         }
     });
 
 
-    document.getElementById("en1").addEventListener("change", ()=>{
+    document.getElementById("envio1").addEventListener("change", ()=>{
         envio(en1, costoEnvio);
+        sessionStorage.setItem("carrito", en1);
     });
 
-    document.getElementById("en2").addEventListener("change", ()=>{
+    document.getElementById("envio2").addEventListener("change", ()=>{
         envio(en2, costoEnvio);
+        sessionStorage.setItem("carrito", en2);
     });
 
-    document.getElementById("en3").addEventListener("change", ()=>{
+    document.getElementById("envio3").addEventListener("change", ()=>{
         envio(en3, costoEnvio);
+        sessionStorage.setItem("carrito", en3);
     });
 
-        
     
 });
