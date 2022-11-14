@@ -21,25 +21,7 @@ function validar(){
     let modalcredito = document.getElementById("credito");
     let modalbanco = document.getElementById("banco");
     let reultadoValidacion = true;
-    /*
-    let numtarjeta = document.getElementById("numtarjeta");
-    let codigo = document.getElementById("codigo");
-    let vencimiento = document.getElementById("vencimiento");
-    let numbanco = document.getElementById("numbanco");
-*/
-   /* if (exprecionRegularEmail.test(correoElecronico.value)){
-        correoElecronico.setCustomValidity("");
-    }else{
-        correoElecronico.setCustomValidity(false);
-        reultadoValidacion=false;
-    }
-  
-    if (contrasenia.value != confirmarContrasenia.value || !contrasenia.checkValidity()){
-        confirmarContrasenia.setCustomValidity(false);
-        reultadoValidacion =false;
-    } else {
-        confirmarContrasenia.setCustomValidity(""); //Se muestra la clase invalid-color
-    }*/
+   
     if (cantidad.value>=1){
         cantidad.setCustomValidity("");
     }else{
@@ -65,43 +47,28 @@ function validar(){
         reultadoValidacion=false;
     }
     if (!modalcredito.checked || !modalbanco.checked){
-        modalbanco.setCustomValidity(false);
-        modalcredito.setCustomValidity(false);
-        reultadoValidacion=false;
+      document.getElementById("btnfinal").classList.add("invalid-color");
+      document.getElementById("feedback-modal-terminos").style.display = "inline";
     }else{
-        modalbanco.setCustomValidity("");
-        modalcredito.setCustomValidity("");
+        document.getElementById("btnfinal").classList.remove("invalid-color");
+        document.getElementById("feedback-modal-terminos").style.display = "none";
     }
-    if (!envio1.checked || !envio2.checked || !envio3.checked ){
+   if (envio1.checked || envio2.checked || envio3.checked ){
+    envio1.setCustomValidity("");
+    envio2.setCustomValidity("");
+    envio3.setCustomValidity("");
+    }else{
         envio1.setCustomValidity(false);
         envio2.setCustomValidity(false);
         envio3.setCustomValidity(false);
         reultadoValidacion=false;
-    }else{
-        envio1.setCustomValidity("");
-        envio2.setCustomValidity("");
-        envio3.setCustomValidity("");
     }
     console.log('Validado!!!!')
     return reultadoValidacion
     
 }
-/*
 
-        numtarjeta.setCustomValidity(false);
-        codigo.setCustomValidity(false);
-        vencimiento.setCustomValidity(false);
-        numbanco.setCustomValidity(false);
-
-
-        numtarjeta.setCustomValidity("");
-        codigo.setCustomValidity("");
-        vencimiento.setCustomValidity("");
-        numbanco.setCustomValidity("");
-
-
-*/
-
+//suma Cantidad y valor del articulo
 function suma(array) {
     let cant = document.getElementById("cant").value;
     let resultado = arrayProduct.currency + " " + (array.cost * cant);
@@ -112,22 +79,22 @@ function suma(array) {
     sumaTotal();
   }
 
-
+// Porcentaje envio
 function envio(array, array2){
 envioTotal = ((array*array2) /100);
 document.getElementById("envio").innerHTML = "USD "+envioTotal;
 sumaTotal();
 };
 
+//suma el Envio y el valor "final" del producto
 function sumaTotal(){
     total = costoEnvio+envioTotal;
     document.getElementById("total").innerHTML = "USD "+ total
 }
 
+//Muestra el articulo
 function showArt(arrayProduct) {
-
     let contenido = "";
-
     contenido += `
         <div class="list-group-item list-group-item-action">
             <div class="row ms-2 me-2">
@@ -156,7 +123,7 @@ function showArt(arrayProduct) {
     document.getElementById("art").innerHTML = contenido;
 }
 
-
+// Seleccionar tipo de pago
 function tipoCredito(radio1, radio2) {
  radio1 = document.getElementById("credito").checked;
  radio2 = document.getElementById("banco").checked;
@@ -175,9 +142,7 @@ function tipoCredito(radio1, radio2) {
         </div>
         `;
         document.getElementById("numbanco").innerHTML = "";
-
         } else if (radio2==true) {
-           
             document.getElementById("numbanco").innerHTML =  `
             <label for="">Número de cuenta: <input id="numbanco" required class="form-control" type="text"></label>
             `;
@@ -186,9 +151,6 @@ function tipoCredito(radio1, radio2) {
             document.getElementById("tarjeta").innerHTML = "";
         }
 }
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -204,7 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    
 
     document.getElementById("envio1").addEventListener("change", ()=>{
         envio(en1, costoEnvio);
