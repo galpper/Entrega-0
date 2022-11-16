@@ -42,11 +42,68 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="text-center mt-5 ms-5 me-5">
+      <h1>Perfil</h1>
+      <hr>
+    </div>
+    
+     <form class="needs-validation form" id="formprofile" novalidate> 
+      <div class="row align-items-center justify-content-center">
+      <div class="col-5">
+        <label for="name" class="form-label">Nombre*:</label>
+        <input type="text" class="form-control" id="name" minlength="4" required>
+        <div class="invalid-feedback">
+          Introduce tu nombre.
+        </div>
+      </div>
+      <div class="col-5">
+        <label for="name2" class="form-label">Segundo nombre:</label>
+        <input type="text" class="form-control" id="name2">
+        <div class="invalid-feedback">
+          Introduce tu segundo nombre.
+        </div>
+      </div>
+      <div class="col-5">
+        <label for="lastname" class="form-label">Apellido*:</label>
+        <input type="text" class="form-control" id="lastname" minlength="4" required>
+        <div class="invalid-feedback">
+          Introduce tu apellido.
+        </div>
+      </div>
+      <div class="col-5">
+        <label for="lastname2" class="form-label">Segundo apellido:</label>
+        <input type="text" class="form-control" id="lastname2">
+        <div class="invalid-feedback">
+          Introduce tu apellido.
+        </div>
+      </div>
+      <div class="col-5">
+        <label for="email" class="form-label">Email*:</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text email" id="inputGroupPrepend">@</span>
+          <input type="email" class="form-control" id="email"  aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            El correo electrónico tiene que ser válido.
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <label for="contacto" class="form-label">Numero de contacto:</label>
+        <input type="text" class="form-control" id="contacto" maxlength="9">
+        <div class="invalid-feedback">
+          Ingresa un numero de contacto.
+        </div>
+      </div>
+      <div class="row col-3 mt-4 ">
+        <button class="btn btn-primary" type="submit" id="btnsubmit">Aceptar</button>
       </div>
     </div>
+    </form>
+
+    
+
+
+
   </main>
   <footer class="text-muted">
     <div class="container">

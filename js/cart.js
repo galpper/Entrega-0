@@ -20,31 +20,31 @@ function validar(){
     let esq = document.getElementById("esq");
     let modalcredito = document.getElementById("credito");
     let modalbanco = document.getElementById("banco");
-    let reultadoValidacion = true;
+    let resultadoValidacion = true;
    
     if (cantidad.value>=1){
         cantidad.setCustomValidity("");
     }else{
         cantidad.setCustomValidity(false);
-        reultadoValidacion=false;
+        resultadoValidacion=false;
     }
     if (calle.innerHTML == ""){
         calle.setCustomValidity("");
     }else{
         calle.setCustomValidity(false);
-        reultadoValidacion=false;
+        resultadoValidacion=false;
     }
     if (esq.innerHTML == ""){
         esq.setCustomValidity("");
     }else{
         esq.setCustomValidity(false);
-        reultadoValidacion=false;
+        resultadoValidacion=false;
     }
     if (num.innerHTML == ""){
         num.setCustomValidity("");
     }else{
         num.setCustomValidity(false);
-        reultadoValidacion=false;
+        resultadoValidacion=false;
     }
     if (!modalcredito.checked || !modalbanco.checked){
       document.getElementById("btnfinal").classList.add("invalid-color");
@@ -61,11 +61,11 @@ function validar(){
         envio1.setCustomValidity(false);
         envio2.setCustomValidity(false);
         envio3.setCustomValidity(false);
-        reultadoValidacion=false;
+        resultadoValidacion=false;
     }
-    console.log('Validado!!!!')
-    return reultadoValidacion
     
+        
+    return resultadoValidacion
 }
 
 //suma Cantidad y valor del articulo
@@ -195,15 +195,28 @@ document.addEventListener("DOMContentLoaded", () => {
         if( !validar() || !this.checkValidity() ){
             evento.preventDefault();
             evento.stopPropagation();
+            
+        } else {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Has comprado con exito!!',
+                showConfirmButton: false,
+                timer: 2500
+            })
         }
         
         document.body.classList.add('was-validated');
-      
+       
         let eventos=['change', 'input'];
         
         eventos.forEach( evento=> {document.body.addEventListener(evento, validar)})
-         
-      
+        
+        
       })
     
 });
+
+/* 
+      
+   }*/
